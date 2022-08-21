@@ -1,0 +1,64 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Sighting</title>
+</head>
+<!-- login and registration -->
+<body>
+    <h1>Add a new sighting</h1>
+    <p>
+        <a href="/">
+            Back to main page 
+        </a>
+    </p>
+    <p>
+        <a href="/user/logout">
+            Logout
+        </a>
+    </p>
+    <form method="POST" action="/sighting/create">
+        <div>
+            <label>
+                Location:
+            </label>
+            <input type="text" name="location" /> 
+            {% for message in get_flashed_messages(category_filter = ['error_sighting_location'] ) %}
+                {{message}}
+            {% endfor %}
+        </div>
+        </div>
+        <div>
+            <label>
+                Description:
+            </label>
+            <textarea type="text" name="description" ></textarea>
+            {% for message in get_flashed_messages(category_filter = ['error_sighting_description'] ) %}
+            {{message}}
+        {% endfor %}
+        </div>
+        <div>
+            <label>
+                Number of Bears:
+            </label>
+            <input type="number" name="number of bears" ></textarea>
+            {% for message in get_flashed_messages(category_filter = ['error_sighting_number_of_bears'] ) %}
+            {{message}}
+        {% endfor %}
+        </div>
+        <div>
+            <label>
+                Date Sighted:
+            </label>
+            <input type="date" name="date_sighted" ></textarea>
+            {% for message in get_flashed_messages(category_filter = ['error_sighting_date_sighted'] ) %}
+            {{message}}
+        {% endfor %}
+        </div>
+
+        <button>Submit</button>1
+    </form>
+</body>
+</html
